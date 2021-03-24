@@ -7,16 +7,22 @@
     android:orientation="vertical"
     tools:context=".TabataSettings">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Back"
+        android:onClick="backClicked"/>
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center"
->
+        android:gravity="center">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="match_parent"
@@ -28,15 +34,15 @@
 
 
             <EditText
+                android:id="@+id/rounds"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints="10"
                 android:gravity="center"
-                android:id="@+id/rounds"
-                android:inputType="number"
                 android:hint="8"
+                android:inputType="number"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:autofillHints="10" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -67,12 +73,12 @@
                 android:id="@+id/work"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints="20"
                 android:gravity="center"
-                android:inputType="number"
                 android:hint="20"
+                android:inputType="number"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:autofillHints="20" />
+                android:textSize="20sp" />
 
 
             <TextView
@@ -104,12 +110,12 @@
                 android:id="@+id/rest"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints="10"
                 android:gravity="center"
-                android:inputType="number"
                 android:hint="10"
+                android:inputType="number"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:autofillHints="10" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -130,8 +136,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start"
-                android:onClick="startClicked"/>
+                android:onClick="startClicked"
+                android:text="Start" />
         </TableRow>
 
 
