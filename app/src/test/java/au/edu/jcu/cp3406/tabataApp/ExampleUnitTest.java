@@ -14,4 +14,21 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void testConstructor(){
+        Tabata tabata = new Tabata(2, 70, 20);
+        assertTrue(tabata.workSeconds == 10);
+
+    }
+
+    @Test
+    public void testTicker(){
+        Tabata tabata = new Tabata(4, 70, 20);
+        for (int i = 0; i < 20; i++) {
+            tabata.tick();
+            tabata.toString();
+        }
+
+    }
 }

@@ -5,18 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class TabataSettings extends AppCompatActivity {
+public class TabataActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tabata_settings);
+        setContentView(R.layout.activity_tabata_display);
+
+
     }
 
     public void backClicked(View view) {
         finish();
     }
 
-    public void doneClicked(View view) {
-    }
 }

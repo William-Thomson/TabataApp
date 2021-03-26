@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabataApp">
-        <activity android:name=".TabataSettings"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".TabataActivity"></activity>
+        <activity android:name=".TabataSettings" />
+        <activity android:name=".HomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
