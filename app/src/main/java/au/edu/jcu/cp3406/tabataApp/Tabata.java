@@ -1,7 +1,5 @@
 package au.edu.jcu.cp3406.tabataApp;
 
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 
 import java.util.Locale;
@@ -15,7 +13,7 @@ public class Tabata {
         this.workTime = workTime;
         this.restTime = restTime;
         round = 0;
-        this.tick = 0;
+        tick = 0;
     }
 
 
@@ -26,9 +24,15 @@ public class Tabata {
     public void tick() { //Ticks through Work time, then rest time, to add round.
         tick++;
         if (tick == workTime) {
+            System.out.println("rest");
+        }
+        if (tick == (restTime + workTime)) {
+            round++;
+            tick = 0;
+            System.out.println("work");
+        }
+    }
 
-        }
-        }
 
 //        workSeconds--;
 //        if (workSeconds == 0) {
@@ -54,9 +58,9 @@ public class Tabata {
 //        }
 //    }
 
-        @NonNull
-        @Override
-        public String toString () {
-            return String.format(Locale.getDefault(),"%02d:%02d", (tick/60), (tick%60) );
-        }
+    @NonNull
+    @Override
+    public String toString() {
+        return String.format(Locale.getDefault(), "%02d:%02d", (tick / 60), (tick % 60));
     }
+}

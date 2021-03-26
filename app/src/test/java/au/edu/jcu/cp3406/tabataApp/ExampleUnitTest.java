@@ -24,10 +24,10 @@ public class ExampleUnitTest {
 
     @Test
     public void testTicker(){
-        Tabata tabata = new Tabata(4, 70, 20);
-        for (int i = 0; i < 20; i++) {
+        Tabata tabata = new Tabata(4, 50, 20);
+        for (int i = 0; i < 100; i++) {
             tabata.tick();
-            tabata.toString();
+            System.out.println(tabata.toString() + " " + tabata.round);
         }
 
     }
