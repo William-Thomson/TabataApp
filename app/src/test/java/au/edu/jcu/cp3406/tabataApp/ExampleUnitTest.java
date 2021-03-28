@@ -18,17 +18,26 @@ public class ExampleUnitTest {
     @Test
     public void testConstructor(){
         Tabata tabata = new Tabata(2, 70, 20);
-        assertTrue(tabata.workSeconds == 10);
 
     }
 
     @Test
     public void testTicker(){
-        Tabata tabata = new Tabata(4, 50, 20);
+        Tabata tabata = new Tabata(4, 5, 10);
         for (int i = 0; i < 100; i++) {
             tabata.tick();
             System.out.println(tabata.toString() + " " + tabata.round);
         }
 
     }
+
+    @Test
+    public void testToggleDisplay(){
+        Tabata tabata = new Tabata(4, 10, 20);
+        for (int i = 0; i < 100; i++) {
+            tabata.tick();
+            System.out.println(tabata.toString() + " " + tabata.round);
+        }
+    }
+
 }

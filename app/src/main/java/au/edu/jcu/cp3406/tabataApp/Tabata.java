@@ -5,62 +5,58 @@ import androidx.annotation.NonNull;
 import java.util.Locale;
 
 public class Tabata {
-    private final int roundToWork, workTime, restTime;
-    public int workSeconds, round, tick;
+    private final int workTime, restTime;
+    public int roundToWork, round, tickW, tickR, time;
 
     public Tabata(int roundToWork, int workTime, int restTime) {
         this.roundToWork = roundToWork;
         this.workTime = workTime;
         this.restTime = restTime;
-        round = 0;
-        tick = 0;
+
     }
-
-
-    //TODO Tick()
-    //TODO toString()
-
 
     public void tick() { //Ticks through Work time, then rest time, to add round.
-        tick++;
-        if (tick == workTime) {
-            System.out.println("rest");
-        }
-        if (tick == (restTime + workTime)) {
-            round++;
-            tick = 0;
-            System.out.println("work");
+        if (tickW > workTime) {
+            time = tickR++;
+            if (tickR > restTime) {
+                round++;
+                tickW = tickR = 0;
+            }
+        } else {
+            time = tickW++;
         }
     }
 
+    public int getWorkTime() {
+        return workTime;
+    }
 
-//        workSeconds--;
-//        if (workSeconds == 0) {
-//            if (workMinutes > 0) {
-//                workMinutes--;
-//                workSeconds = 60;
-//            } else { // TODO change display to rest time
-//                restSeconds--;
-//                if (restSeconds == 0) {
-//
-//                    if (restMinutes > 0) {
-//                        restMinutes--;
-//                        restSeconds = 60;
-//                    } else { //TODO add round and restart timer
-//                        round++;
-//                        if (round < roundToWork) {
-//                            convertWorkTime();
-//                            convertRestTime();
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
+    public int getRestTime() {
+        return restTime;
+    }
+
+    public int getRoundsToWork() {
+        return roundToWork;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public int getTickW() {
+        return tickW;
+    }
+
+    public int getTickR() {
+        return tickR;
+    }
+
 
     @NonNull
     @Override
     public String toString() {
-        return String.format(Locale.getDefault(), "%02d:%02d", (tick / 60), (tick % 60));
+        return String.format(Locale.getDefault(), "%02d:%02d", (time / 60), (time % 60));
     }
+
+
 }
