@@ -6,13 +6,22 @@ import java.util.Locale;
 
 public class Tabata {
     private final int workTime, restTime;
-    public int roundToWork, round, tickW, tickR, time;
+    public int roundsToWork, round, tickW, tickR, time;
 
-    public Tabata(int roundToWork, int workTime, int restTime) {
-        this.roundToWork = roundToWork;
+    public Tabata(int roundsToWork, int workTime, int restTime) { //default constructor.
+        this.roundsToWork = roundsToWork;
         this.workTime = workTime;
         this.restTime = restTime;
+    }
 
+    public Tabata(int roundsToWork, int workTime, int restTime, int time, int tickW, int tickR, int round) { //Saved instance constructor.
+        this.roundsToWork = roundsToWork;
+        this.workTime = workTime;
+        this.restTime = restTime;
+        this.time = time;
+        this.tickW = tickW;
+        this.tickR = tickR;
+        this.round = round;
     }
 
     public void tick() { //Ticks through Work time, then rest time, to add round.
@@ -27,36 +36,36 @@ public class Tabata {
         }
     }
 
-    public int getWorkTime() {
+    public int getWorkTime() { //workTime getter.
         return workTime;
     }
 
-    public int getRestTime() {
+    public int getRestTime() { //restTime getter.
         return restTime;
     }
 
-    public int getRoundsToWork() {
-        return roundToWork;
+    public int getRoundsToWork() { //roundsToWork getter.
+        return roundsToWork;
     }
 
-    public int getTime() {
+    public int getTime() { //time getter.
         return time;
     }
 
-    public int getTickW() {
+    public int getTickW() { //tickW getter.
         return tickW;
     }
 
-    public int getTickR() {
+    public int getTickR() { //tickR getter.
         return tickR;
     }
-
+    public int getRound() { //round getter
+        return round;
+    }
 
     @NonNull
     @Override
-    public String toString() {
+    public String toString() { //returns a string format of the current time.
         return String.format(Locale.getDefault(), "%02d:%02d", (time / 60), (time % 60));
     }
-
-
 }
